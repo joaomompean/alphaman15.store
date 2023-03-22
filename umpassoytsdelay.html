@@ -539,7 +539,7 @@ p {
 <div class="perguntas">
 <div class="center">
 <div class="botoes">
-<a href="pvytsdelay.html">
+<a id='botaoproximo' href=''>
 <button class="button">
 <span class="submit">ACESSAR AGORA 🔓</span>
 <span class="loading"><i class="fa fa-refresh"></i></span>
@@ -567,7 +567,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 	
-	<script src="https://payt.com.br/cdn/queryparameters.js"></script>
+<script>
+		const urlParams = new URLSearchParams(window.location.search);
+		const scrParam = urlParams.get('src');
+    if(scrParam){
+		const proximoBtn = document.getElementById('botaoproximo');
+		proximoBtn.href = 'pvytsdelay.html?scr=' + scrParam;
+    } else{
+		const proximoBtn = document.getElementById('botaoproximo');
+		proximoBtn.href = 'pvytsdelay.html';
+    }
+	</script>
 	
 	
 </body>
